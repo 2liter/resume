@@ -15,7 +15,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">Jacky</a>
-      <button class="nav-toggle" id="navToggle" aria-label="開關選單">
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="navMenu">
@@ -427,7 +427,7 @@
             <textarea id="message" name="message" rows="5" placeholder="請描述您的需求或想法…" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary btn-full">送出訊息</button>
-          <p class="form-notice" id="formNotice" aria-live="polite"></p>
+          <p class="form-notice" id="formNotice" role="alert" aria-live="assertive" aria-atomic="true"></p>
         </form>
       </div>
     </div>
