@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梁冬昇 (Jacky Liang) - 個人履歷</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d4aa;
+            --primary-dark: #00a88a;
+            --secondary: #6366f1;
+            --accent: #f472b6;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(0, 212, 170, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(244, 114, 182, 0.05) 0%, transparent 50%);
+            animation: bgMove 20s ease-in-out infinite;
+        }
+
+        @keyframes bgMove {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(2%, 2%) rotate(1deg); }
+            66% { transform: translate(-1%, 1%) rotate(-1deg); }
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .shape:nth-child(1) { width: 300px; height: 300px; top: 10%; left: 5%; animation-delay: 0s; }
+        .shape:nth-child(2) { width: 200px; height: 200px; top: 60%; right: 10%; animation-delay: -5s; border-color: rgba(99, 102, 241, 0.2); }
+        .shape:nth-child(3) { width: 150px; height: 150px; bottom: 20%; left: 20%; animation-delay: -10s; border-color: rgba(244, 114, 182, 0.2); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-30px) rotate(180deg); opacity: 0.6; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem 2rem;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+        }
+
+        .hero-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            animation: avatarGlow 3s ease-in-out infinite;
+            box-shadow: 0 0 60px rgba(0, 212, 170, 0.4);
+        }
+
+        @keyframes avatarGlow {
+            0%, 100% { box-shadow: 0 0 60px rgba(0, 212, 170, 0.4); }
+            50% { box-shadow: 0 0 80px rgba(99, 102, 241, 0.6); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--light) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 50px;
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .contact-item svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: var(--primary);
+            opacity: 0.6;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .skill-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--light);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 212, 170, 0.1);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--primary);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 3rem;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--primary);
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content .company {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .project-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(0, 212, 170, 0.1);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card .bg {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-card .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-card .tech-tag {
+            padding: 0.3rem 0.7rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 15px;
+            font-size: 0.75rem;
+            color: var(--secondary);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(99, 102, 241, 0.1));
+            border-radius: 24px;
+            padding: 3rem;
+            margin: 4rem 2rem;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stats-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stats-item .label {
+            color: var(--gray);
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero h2 { font-size: 1.2rem; }
+            .hero-stats { gap: 1.5rem; }
+            .stat-number { font-size: 2rem; }
+            .nav-links { display: none; }
+            .timeline { padding-left: 20px; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">Jacky Liang</div>
+        <ul class="nav-links">
+            <li><a href="#about">關於</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#experience">經驗</a></li>
+            <li><a href="#projects">專案</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-avatar">JL</div>
+            <h1>梁冬昇 (Jacky Liang)</h1>
+            <h2>PC Camera 軟體工程師 | ISP Tuning Tool 開發 | AI Camera API</h2>
+            <div class="hero-title">Realtek Semiconductor 瑞昱半導體 (2020 - 至今)</div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    jacky.d.liang@gmail.com
+                </div>
+                <div class="contact-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                    0978-***
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">年資驗</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">977+</span>
+                    <span class="stat-label">負責 Issues</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">599+</span>
+                    <span class="stat-label">回報 Issues</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8+</span>
+                    <span class="stat-label">主要專案</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">專業技能</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon">⚡</div>
+                <h3>程式語言</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Programming Languages</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">C/C++</span>
+                    <span class="skill-tag">C#</span>
+                    <span class="skill-tag">XAML</span>
+                    <span class="skill-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🪟</div>
+                <h3>Windows 開發</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Windows Development</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">MFC</span>
+                    <span class="skill-tag">Win32</span>
+                    <span class="skill-tag">WinRT</span>
+                    <span class="skill-tag">UWP</span>
+                    <span class="skill-tag">WinUI 3</span>
+                    <span class="skill-tag">Windows Service</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">📷</div>
+                <h3>相機/ISP</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Camera & ISP</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">ISP Tuning</span>
+                    <span class="skill-tag">RealCam</span>
+                    <span class="skill-tag">3A 演算法</span>
+                    <span class="skill-tag">IQ Table</span>
+                    <span class="skill-tag">Protobuf</span>
+                    <span class="skill-tag">UVC</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🎨</div>
+                <h3>影像演算法</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Image Processing</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">AE</span>
+                    <span class="skill-tag">AWB</span>
+                    <span class="skill-tag">LSC</span>
+                    <span class="skill-tag">Gamma</span>
+                    <span class="skill-tag">NR</span>
+                    <span class="skill-tag">3DNR</span>
+                    <span class="skill-tag">DRC</span>
+                    <span class="skill-tag">DPC</span>
+                    <span class="skill-tag">Dehaze</span>
+                    <span class="skill-tag">LDC</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🚀</div>
+                <h3>並行運算</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Parallel Computing</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">OpenMP</span>
+                    <span class="skill-tag">std::thread</span>
+                    <span class="skill-tag">SIMD</span>
+                    <span class="skill-tag">SSE/AVX</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🔐</div>
+                <h3>安全/加密</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Security & Encryption</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">OpenSSL</span>
+                    <span class="skill-tag">DFU 加密</span>
+                    <span class="skill-tag">Black Duck 掃描</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🔌</div>
+                <h3>通訊協議</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">Communication Protocols</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">USB</span>
+                    <span class="skill-tag">UVC</span>
+                    <span class="skill-tag">USB HID</span>
+                    <span class="skill-tag">Protobuf</span>
+                    <span class="skill-tag">MIPI</span>
+                    <span class="skill-tag">RTSP</span>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon">🤖</div>
+                <h3>AI Camera</h3>
+                <p style="color: var(--gray); margin-bottom: 0.5rem;">AI Camera Integration</p>
+                <div class="skill-tags">
+                    <span class="skill-tag">HPD</span>
+                    <span class="skill-tag">HP Vision AI</span>
+                    <span class="skill-tag">KWS API</span>
+                    <span class="skill-tag">ALS Sensor</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">工作經驗</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2020 - 至今</div>
+                <div class="timeline-content">
+                    <h3>PC Camera 軟體工程師</h3>
+                    <p class="company">Realtek Semiconductor 瑞昱半導體</p>
+                    <ul>
+                        <li>PC Camera 軟體開發與 ISP Tuning Tool 開發</li>
+                        <li>AI Camera API 整合與維護</li>
+                        <li>支援多家 OEM 客戶 (HP, Acer, ASUS, VAIO, Dell, Lenovo)</li>
+                        <li>跨平台開發 (Windows, Linux, AmebaPro2, AmebaPro3)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">專案經驗</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <span class="project-number">01</span>
+                <h3>RealCam ISP Tuning Tool 開發</h3>
+                <p class="bg">開發完整的 ISP 調整工具 UI，涵蓋曝光控制、白平衡、鏡頭校正、噪聲抑制、動態範圍壓縮、色調調整、邊緣增強、畸變校正等功能。並設計 IQ Table (Protobuf) 管理系统，支持 Save/Load、Combine/Separate、批次更新等功能。</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">MFC</span>
+                    <span class="tech-tag">Protobuf</span>
+                    <span class="tech-tag">ISP Tuning</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">02</span>
+                <h3>ISP Simulator 開發</h3>
+                <p class="bg">針對 5M 以上高解析度影像在 RAW Domain 計算問題進行研究。導入 OpenMP 平行化，撰寫技術文件於 Confluence。使用 SIMD 指令集 (SSE/AVX) 加速 3DNR 演算法，大幅提升效能。並開發 Linux 版 IPCam Simulator。</p>
+                <div class="tech">
+                    <span class="tech-tag">C/C++</span>
+                    <span class="tech-tag">OpenMP</span>
+                    <span class="tech-tag">SIMD</span>
+                    <span class="tech-tag">Linux</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">03</span>
+                <h3>FW 自動化測試工具</h3>
+                <p class="bg">開發 MFC TrayIcon 背景執行自動測試工具，支援多種測試項目：影片錄製檢查、多解析度播放、自對焦檢測、PPWB 辨識、ESD Recovery、MIPI 時序判斷、影像檢測等，大幅減少人工測試時間。</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">MFC</span>
+                    <span class="tech-tag">UVC</span>
+                    <span class="tech-tag">MIPI</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">04</span>
+                <h3>Windows DMFT / RealSight</h3>
+                <p class="bg">基於 Windows Device Media Foundation Transform (DMFT) 開發 AI 功能相機軟體 RealSight。實現 Background Blur、Face Track 功能，修復 Win11 相容性問題，完成 WHQL 測試認證，並持續支援 VAIO、HP HDR Dynamic 等 OEM 需求。</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">DMFT</span>
+                    <span class="tech-tag">WinRT</span>
+                    <span class="tech-tag">WHQL</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">05</span>
+                <h3>VideoNoiseSorter 工具</h3>
+                <p class="bg">為多家 OEM 客戶開發影像品質排序工具。實現 AVC 格式影像雜訊自動檢測排序、 Sensor Test Mode 控制流程、新增 Noise Model Calibration Tool (3915 NM 微調) 等功能。</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">影像處理</span>
+                    <span class="tech-tag">OEM</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">06</span>
+                <h3>AI Camera API (RtkAiCameraApi)</h3>
+                <p class="bg">開發 Realtek AI Camera 對外 API，整合 HPD (Human Presence Detection) AI 功能。實現 HP Vision AI Protocol (v1~v7)，支援 Face ID、ALS via USB HID。開發 RtkHPDService 整合 DFU、Read/Register、YouTube Tag 功能。並支援 XAML/WinUI 預覽、KWS (Keyword Spotting)、Virtual Camera Driver 等。</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">WinUI 3</span>
+                    <span class="tech-tag">OpenSSL</span>
+                    <span class="tech-tag">DFU</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">07</span>
+                <h3>FW CheckList / AutoTest 自動化</h3>
+                <p class="bg">開發 Registry 自動檢測 FW CheckList 工具、USB Viewer、Suspend 電流檢測、Unknown Device 排查流程、新增 Execution Time 測試、Lenovo Sensor Suspend Issue 排查等自動化功能。</p>
+                <div class="tech">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Registry</span>
+                    <span class="tech-tag">USB</span>
+                    <span class="tech-tag">自動化</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <span class="project-number">08</span>
+                <h3>AmebaPro2 / AmebaPro3 支援</h3>
+                <p class="bg">支援 AmebaPro2/Pro3 平台 RealCam 工具移轉，包括 AIQ、RNR Calibration Tool、Long/Short Frame 擷取、RTS3917 全套 RealCam 支援 (30+ 功能)、Proto 功能擴展、Command Error Code 更新等。</p>
+                <div class="tech">
+                    <span class="tech-tag">AmebaPro2</span>
+                    <span class="tech-tag">AmebaPro3</span>
+                    <span class="tech-tag">RealCam</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stats-item">
+                <div class="number">6+</div>
+                <div class="label">年工作經驗</div>
+            </div>
+            <div class="stats-item">
+                <div class="number">8+</div>
+                <div class="label">主要專案開發</div>
+            </div>
+            <div class="stats-item">
+                <div class="number">6+</div>
+                <div class="label">OEM 客戶支援</div>
+            </div>
+            <div class="stats-item">
+                <div class="number">7+</div>
+                <div class="label">Jira 專案參與</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 梁冬昇 (Jacky Liang) - 個人履歷</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem;">資料來源: Jira & Confluence 記錄 - 2026-05-22</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.skill-card, .timeline-item, .project-card, .fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(2, 6, 23, 0.95)';
+            } else {
+                nav.style.background = 'rgba(2, 6, 23, 0.8)';
+            }
+        });
+
+        // Initial animation trigger
+        setTimeout(() => {
+            document.querySelector('.hero-avatar').style.animationPlayState = 'running';
+        }, 100);
+    </script>
+</body>
+</html>
