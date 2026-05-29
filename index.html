@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jacky — 個人履歷</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">Jacky</a>
+      <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about"     class="nav-link">關於我</a></li>
+        <li><a href="#skills"    class="nav-link">技能</a></li>
+        <li><a href="#experience" class="nav-link">工作經歷</a></li>
+        <li><a href="#education" class="nav-link">學歷</a></li>
+        <li><a href="#projects"  class="nav-link">專案</a></li>
+        <li><a href="#contact"   class="nav-link">聯絡我</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <span class="avatar-placeholder">J</span>
+      </div>
+      <h1 class="hero-name">Jacky Chen</h1>
+      <p class="hero-title">全端工程師 · 熱愛打造使用者體驗</p>
+      <p class="hero-location">📍 台灣 · 台北</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">聯絡我</a>
+        <a href="#projects" class="btn btn-outline">查看作品</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:jacky@example.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>往下滑動</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">關於我</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            我是 Jacky，一名擁有 5 年以上經驗的全端工程師，熱愛將複雜問題化為直觀、優雅的解決方案。
+            我擅長前後端開發，對使用者體驗與程式碼品質有高度堅持。
+          </p>
+          <p>
+            平時喜歡研究新技術、參與開源社群，並在技術部落格分享學習心得。
+            相信持續學習與團隊合作是打造優秀產品的核心。
+          </p>
+          <div class="about-info">
+            <div class="info-item"><span class="info-label">姓名</span><span>陳 Jacky</span></div>
+            <div class="info-item"><span class="info-label">所在地</span><span>台灣，台北</span></div>
+            <div class="info-item"><span class="info-label">Email</span><span>jacky@example.com</span></div>
+            <div class="info-item"><span class="info-label">求職狀態</span><span class="badge badge-open">開放機會</span></div>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">年工作經驗</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">30+</span>
+            <span class="stat-label">完成專案</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">合作客戶</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">GitHub Stars</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">技能專長</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">前端開發</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>React / Next.js</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>TypeScript</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>CSS / Tailwind</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 88%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Vue.js</span><span>75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 75%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">後端開發</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>Node.js / Express</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Python / Django</span><span>78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 78%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>PostgreSQL / MySQL</span><span>82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 82%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>GraphQL / REST API</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 80%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">DevOps &amp; 工具</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>Docker / Kubernetes</span><span>72%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 72%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>AWS / GCP</span><span>70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 70%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>CI/CD (GitHub Actions)</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Git</span><span>92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 92%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">軟實力</h3>
+          <div class="tag-list">
+            <span class="tag">團隊協作</span>
+            <span class="tag">溝通表達</span>
+            <span class="tag">問題解決</span>
+            <span class="tag">敏捷開發</span>
+            <span class="tag">技術分享</span>
+            <span class="tag">需求分析</span>
+            <span class="tag">專案管理</span>
+            <span class="tag">Code Review</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE ========== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title">工作經歷</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">資深全端工程師</h3>
+                <p class="timeline-company">ABC 科技股份有限公司</p>
+              </div>
+              <span class="timeline-period">2022 — 至今</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>主導重構核心交易系統，效能提升 40%，月活躍用戶成長 25%。</li>
+              <li>帶領 4 人前端團隊，導入 TypeScript + React Query，減少 Bug 率 35%。</li>
+              <li>設計並維護 RESTful / GraphQL API，服務日均請求量超過 100 萬次。</li>
+              <li>建立 CI/CD 流程（GitHub Actions + Docker），部署時間從 2 小時縮短至 10 分鐘。</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag tag-sm">React</span>
+              <span class="tag tag-sm">TypeScript</span>
+              <span class="tag tag-sm">Node.js</span>
+              <span class="tag tag-sm">PostgreSQL</span>
+              <span class="tag tag-sm">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">前端工程師</h3>
+                <p class="timeline-company">XYZ 新創公司</p>
+              </div>
+              <span class="timeline-period">2020 — 2022</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>開發 SaaS 平台前端，使用 Vue.js + Vuex，服務超過 5000 名企業用戶。</li>
+              <li>實作無障礙（WCAG 2.1 AA）介面，協助公司取得政府專案資格。</li>
+              <li>與設計師緊密協作，將 Figma 設計稿精確轉化為可維護的元件庫。</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag tag-sm">Vue.js</span>
+              <span class="tag tag-sm">JavaScript</span>
+              <span class="tag tag-sm">SCSS</span>
+              <span class="tag tag-sm">REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">初級工程師</h3>
+                <p class="timeline-company">DEF 軟體顧問公司</p>
+              </div>
+              <span class="timeline-period">2019 — 2020</span>
+            </div>
+            <ul class="timeline-bullets">
+              <li>協助開發客戶內部管理系統，使用 Django + React 架構。</li>
+              <li>撰寫單元測試與整合測試，測試覆蓋率達 80% 以上。</li>
+            </ul>
+            <div class="timeline-tags">
+              <span class="tag tag-sm">Python</span>
+              <span class="tag tag-sm">Django</span>
+              <span class="tag tag-sm">React</span>
+              <span class="tag tag-sm">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION ========== -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <h2 class="section-title">學歷</h2>
+      <div class="education-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-info">
+            <h3 class="edu-degree">資訊工程學系 學士</h3>
+            <p class="edu-school">國立台灣大學</p>
+            <p class="edu-period">2015 — 2019</p>
+            <p class="edu-note">畢業論文：基於深度學習的自然語言處理應用</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">📜</div>
+          <div class="edu-info">
+            <h3 class="edu-degree">AWS Certified Solutions Architect</h3>
+            <p class="edu-school">Amazon Web Services</p>
+            <p class="edu-period">2023</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">📜</div>
+          <div class="edu-info">
+            <h3 class="edu-degree">Google Professional Cloud Developer</h3>
+            <p class="edu-school">Google Cloud</p>
+            <p class="edu-period">2022</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">精選專案</h2>
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">TaskFlow</h3>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub Repo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="https://example.com" target="_blank" rel="noopener" aria-label="Live Demo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">全端任務管理 SaaS 平台，支援即時協作、甘特圖、Kanban 看板，已有 1,000+ 活躍用戶。</p>
+          <div class="project-tags">
+            <span class="tag tag-sm">Next.js</span>
+            <span class="tag tag-sm">Prisma</span>
+            <span class="tag tag-sm">Socket.io</span>
+            <span class="tag tag-sm">PostgreSQL</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">OpenChat</h3>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub Repo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="https://example.com" target="_blank" rel="noopener" aria-label="Live Demo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">開源即時聊天應用，整合 OpenAI API 提供 AI 助理功能，GitHub 獲得 300+ Stars。</p>
+          <div class="project-tags">
+            <span class="tag tag-sm">React</span>
+            <span class="tag tag-sm">Node.js</span>
+            <span class="tag tag-sm">WebSocket</span>
+            <span class="tag tag-sm">OpenAI</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">DataViz Dashboard</h3>
+            <div class="project-links">
+              <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub Repo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              </a>
+              <a href="https://example.com" target="_blank" rel="noopener" aria-label="Live Demo">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+            </div>
+          </div>
+          <p class="project-desc">互動式資料視覺化儀表板，支援多種圖表類型與即時資料更新，適用於電商與財務分析。</p>
+          <div class="project-tags">
+            <span class="tag tag-sm">D3.js</span>
+            <span class="tag tag-sm">React</span>
+            <span class="tag tag-sm">Python</span>
+            <span class="tag tag-sm">FastAPI</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">聯絡我</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">有合作提案或工作機會？歡迎隨時與我聯繫，我通常在 24 小時內回覆。</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>jacky@example.com</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>台灣，台北市</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>github.com/jacky</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">您的姓名</label>
+            <input type="text" id="name" name="name" placeholder="王小明" required />
+          </div>
+          <div class="form-group">
+            <label for="email">電子郵件</label>
+            <input type="email" id="email" name="email" placeholder="hello@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">主旨</label>
+            <input type="text" id="subject" name="subject" placeholder="合作提案" required />
+          </div>
+          <div class="form-group">
+            <label for="message">訊息內容</label>
+            <textarea id="message" name="message" rows="5" placeholder="請描述您的需求或想法…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">送出訊息</button>
+          <p class="form-notice" id="formNotice" role="alert" aria-live="assertive" aria-atomic="true"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Jacky Chen · 台灣，台北</p>
+      <p class="footer-note">以 ❤️ 手工打造</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
